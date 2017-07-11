@@ -1,6 +1,6 @@
 'use strict';
 
-huoyun.constant("MarkFactory", function() {
+huoyunWidget.constant("MarkFactory", function() {
 
   function Point(x, y) {
     this.x = x;
@@ -278,7 +278,7 @@ huoyun.constant("MarkFactory", function() {
   };
 }());
 
-huoyun.filter("channel", function() {
+huoyunWidget.filter("channel", function() {
 
   return function(shapeGroupStore, channel) {
     if (shapeGroupStore && channel) {

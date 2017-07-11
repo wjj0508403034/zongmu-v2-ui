@@ -1,6 +1,6 @@
 'use strict';
 
-huoyun.directive("widgetsVideoPlayerControlBar", ["VideoEventName", "MarkObject",
+huoyunWidget.directive("widgetsVideoPlayerControlBar", ["VideoEventName", "MarkObject",
   function(VideoEventName, MarkObject) {
     return {
       restrict: "A",

@@ -1,6 +1,6 @@
 'use strict';
 
-huoyun.constant("VideoEventName", {
+huoyunWidget.constant("VideoEventName", {
   Play: "video.play",
   Pause: "video.pause",
   PreviousFrame: "video.previous.frame",
@@ -12,7 +12,7 @@ huoyun.constant("VideoEventName", {
   ChangeRate: "video.change.rate",
 });
 
-huoyun.constant("Video", function($injector, videoElement) {
+huoyunWidget.constant("Video", function($injector, videoElement) {
   this.src = videoElement.src;
   this.duration = videoElement.duration;
   this.height = videoElement.videoHeight;
@@ -96,7 +96,7 @@ huoyun.constant("Video", function($injector, videoElement) {
   };
 });
 
-huoyun.filter("FrameInfo", function() {
+huoyunWidget.filter("FrameInfo", function() {
   return function(video) {
     if (video) {
       return `当前帧：${video.currentFrame} / 总帧数：${video.totalFrames}`;
@@ -104,7 +104,7 @@ huoyun.filter("FrameInfo", function() {
   };
 });
 
-huoyun.filter("TimeInfo", function() {
+huoyunWidget.filter("TimeInfo", function() {
   return function(video) {
     if (video) {
       return `${video.currentTime.toFixed(2)}:${video.duration.toFixed(2)}`;

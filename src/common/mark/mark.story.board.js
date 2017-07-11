@@ -1,6 +1,6 @@
 'use strict';
 
-huoyun.directive("widgetsSvgStoryBoard", ["$log", "MarkFactory", "Timeline", "ShapeEventName", "$timeout",
+huoyunWidget.directive("widgetsSvgStoryBoard", ["$log", "MarkFactory", "Timeline", "ShapeEventName", "$timeout",
   function($log, MarkFactory, Timeline, ShapeEventName, $timeout) {
     return {
       restrict: "A",

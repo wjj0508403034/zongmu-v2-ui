@@ -10,8 +10,8 @@ var bom = require('gulp-bom');
 
 const DestFolder = "dist";
 const SourceFolder = "src";
-const DeployDestFolder = "./../backend-service/gts/src/main/resources/templates/";
-const DeployResourcesFolder = "./../backend-service/gts/src/main/resources/static/";
+const DeployDestFolder = "./../zongmu_v2/gts/src/main/resources/templates/";
+const DeployResourcesFolder = "./../zongmu_v2/gts/src/main/resources/static/";
 const Timestamp = Date.now();
 
 gulp.task('clean', function() {
@@ -74,7 +74,7 @@ gulp.task('concat-widget-view-template', ["clean"], function() {
 
   var es = require('event-stream');
   return es.merge([
-      gulp.src(['src/**/*.js']),
+      gulp.src(['src/common/**/*.js']),
       templateStream
     ])
     .pipe(showFile())
@@ -123,7 +123,9 @@ gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'c
   var injectJs = gulp.src([
     `${DestFolder}/libs/jquery.min.js`, // 必须把jquery放在第一个文件，后面很多模块依赖jquery
     `${DestFolder}/libs/jquery-ui.min.js`,
+    `${DestFolder}/libs/jquery.slim.min.js`,
     `${DestFolder}/libs/angular.js`,
+    `${DestFolder}/libs/svg/svg.min.js`,
     `${DestFolder}/libs/**/*.js`,
     `${DestFolder}/app.js`,
   ], {
@@ -132,7 +134,6 @@ gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'c
 
   return gulp.src('src/*.html')
     .pipe(showFile())
-    .pipe(gulp.dest(`${DestFolder}`))
     .pipe(inject(injectCss, {
       transform: function(filepath) {
         filepath = filepath.replace("/dist", "");
@@ -147,5 +148,6 @@ gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'c
         return `<script src="..${filepath}"></script>`;
       }
     }))
+    .pipe(gulp.dest(`${DestFolder}`))
     .pipe(gulp.dest(`${DeployDestFolder}`));
 });

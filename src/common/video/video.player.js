@@ -4,7 +4,7 @@
  * http://www.w3school.com.cn/tags/html_ref_eventattributes.asp
  *
  */
-huoyun.directive("widgetsVideoPlayer", ["$sce", "$log", "$timeout", "VideoEventName", "Video", "$injector", "ShapeEventName", "MarkObject", "MarkFactory",
+huoyunWidget.directive("widgetsVideoPlayer", ["$sce", "$log", "$timeout", "VideoEventName", "Video", "$injector", "ShapeEventName", "MarkObject", "MarkFactory",
   function($sce, $log, $timeout, VideoEventName, Video, $injector, ShapeEventName, MarkObject, MarkFactory) {
 
     const STEP = 5;

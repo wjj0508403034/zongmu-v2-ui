@@ -1,6 +1,6 @@
 'use strict';
 
-huoyun.constant("MarkObject", function() {
+huoyunWidget.constant("MarkObject", function() {
   this.name = `obj${(new Date()).getTime()}`;
   this.channelMap = {};
 
@@ -80,7 +80,7 @@ huoyun.constant("MarkObject", function() {
 //   RECT: "RECT"
 // });
 
-huoyun.constant("ShapeEventName", {
+huoyunWidget.constant("ShapeEventName", {
   CREATE: "Shape.Event.Create",
   DELETE: "Shape.Event.Create"
 });
@@ -210,13 +210,13 @@ huoyun.constant("ShapeEventName", {
 //   };
 // });
 
-huoyun.constant("TimelineStatus", {
+huoyunWidget.constant("TimelineStatus", {
   BEGIN: "Begin",
   INPROGRESS: "InProgress",
   END: "End"
 });
 
-huoyun.constant("Timeline", function(frameIndex) {
+huoyunWidget.constant("Timeline", function(frameIndex) {
   this.frameIndex = frameIndex;
   this.status = "Begin";
 });
