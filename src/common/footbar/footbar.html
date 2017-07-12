@@ -1,0 +1,15 @@
+<div class="widgets-foot-bar" id="foot">
+  <ul>
+    <li ng-repeat="link in getLinks()">
+      <a ng-href="{{link.href}}" ng-bind="link.text"></a>
+    </li>
+  </ul>
+  <div class="addition-info">
+    <span class="copyright">
+      <i class="fa fa-copyright"></i>
+      <span ng-bind="getCopyRight()"></span>
+    </span>
+    <span class="company-name" ng-bind="getCompanyName()"></span>
+    <span class="record" ng-bind="getRecordNo()"></span>
+  </div>
+</div>

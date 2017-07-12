@@ -35,6 +35,21 @@ huoyun.config(["navProvider", function(navProvider) {
 }]);
 
 
+huoyun.config(["footbarProvider", function(footbarProvider) {
+  footbarProvider.configure({
+    links: [{
+      text: "关于系统",
+      href: "http://www.zongmutech.com/"
+    }, {
+      text: "联系我们(QQ:123456;Tel:12345678)",
+      href: "/"
+    }],
+    copyRight: "2014-2016",
+    companyName: "纵目科技有限公司",
+    recordNo: "沪公安备09004260号"
+  });
+}]);
+
 
 
 

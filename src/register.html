@@ -11,9 +11,9 @@
 <body class="huoyun">
   <div class="body-wrapper">
     <div class="body-wrapper-bg">
-      <div class="form" ng-controller="LoginController">
+      <div class="form" ng-controller="RegisterController">
         <header class="form-header">
-          <h1>欢迎登录销售易</h1>
+          <h1>欢迎注册销售易</h1>
         </header>
         <div class="form-body">
           <ul>
@@ -26,19 +26,23 @@
             <li has-error="{{vm.password.hasError}}">
               <div class="form-input-warpper">
                 <input type="password" class="form-input" ng-model="vm.password.value" name="password" placeholder="请输入密码" tabindex="2">
-                <span class="form-input-right">
-      					    <a href="/global/password-forget.action" tabindex="4">忘记密码？</a>
-      					  </span>
               </div>
               <span class="err-msg" ng-bind="vm.password.errorMessage"></span>
+            </li>
+            <li has-error="{{vm.repeatPassword.hasError}}">
+              <div class="form-input-warpper">
+                <input type="password" class="form-input" ng-model="vm.repeatPassword.value" name="repeatPassword" placeholder="请再次输入密码"
+                  tabindex="2">
+              </div>
+              <span class="err-msg" ng-bind="vm.repeatPassword.errorMessage"></span>
             </li>
           </ul>
         </div>
         <div class="form-footer">
-          <div class="btn" tabindex="3" ng-click="login()">登 录</div>
+          <div class="btn" tabindex="3" ng-click="register()">注册</div>
         </div>
         <div class="margin-top-30">
-          <span>没有账号?</span><span><a href="/register.html" class="register_link" tabindex="6" act="reg_link">免费注册</a></span>
+          <span>已经拥有账号，去</span><span><a href="/login.html" class="register_link" tabindex="6" act="reg_link">登录</a></span>
         </div>
       </div>
     </div>

@@ -10,8 +10,8 @@ var bom = require('gulp-bom');
 
 const DestFolder = "dist";
 const SourceFolder = "src";
-const DeployDestFolder = "./../zongmu_v2/gts/src/main/resources/templates/";
-const DeployResourcesFolder = "./../zongmu_v2/gts/src/main/resources/static/";
+const DeployDestFolder = "./../zongmu-v2/gts/src/main/resources/templates/";
+const DeployResourcesFolder = "./../zongmu-v2/gts/src/main/resources/static/";
 const Timestamp = Date.now();
 
 gulp.task('clean', function() {
@@ -38,7 +38,7 @@ gulp.task('copy-font', ["clean"], function() {
 gulp.task('copy-resource', ["clean"], function() {
   return gulp.src(['res/**'])
     .pipe(showFile())
-    .pipe(gulp.dest(`${DestFolder}/res`));
+    .pipe(gulp.dest(`${DestFolder}/images`));
 });
 
 gulp.task('copy-thirdparty', ["clean"], function() {
@@ -83,7 +83,7 @@ gulp.task('concat-widget-view-template', ["clean"], function() {
 });
 
 gulp.task('concat-app-css', ["clean"], function() {
-  return gulp.src('src/view/**/*.css')
+  return gulp.src(['src/*.css', 'src/view/**/*.css'])
     .pipe(showFile())
     .pipe(concat("app.css"))
     .pipe(gulp.dest(`${DestFolder}/libs`));
@@ -111,7 +111,9 @@ gulp.task('concat-app-view-template', ["clean"], function() {
     .pipe(gulp.dest(`${DestFolder}`));
 });
 
-gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'concat-widget-css', 'concat-widget-view-template', 'concat-app-css', 'concat-app-view-template'], function() {
+gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'concat-widget-css',
+  'concat-widget-view-template', 'concat-app-css', 'concat-app-view-template'
+], function() {
   var injectCss = gulp.src([
     `${DestFolder}/libs/**/*.css`,
     `${DestFolder}/libs/huoyun.widget.css`,
@@ -148,6 +150,5 @@ gulp.task('build', ['clean', 'copy-thirdparty', 'copy-resource', 'copy-font', 'c
         return `<script src="..${filepath}"></script>`;
       }
     }))
-    .pipe(gulp.dest(`${DestFolder}`))
     .pipe(gulp.dest(`${DeployDestFolder}`));
 });
