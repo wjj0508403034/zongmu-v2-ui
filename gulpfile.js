@@ -10,8 +10,8 @@ var bom = require('gulp-bom');
 
 const DestFolder = "dist";
 const SourceFolder = "src";
-const DeployDestFolder = "./../zongmu-v2/gts/src/main/resources/templates/";
-const DeployResourcesFolder = "./../zongmu-v2/gts/src/main/resources/static/";
+const DeployDestFolder = "./../zongmu_v2/gts/src/main/resources/templates/";
+const DeployResourcesFolder = "./../zongmu_v2/gts/src/main/resources/static/";
 const Timestamp = Date.now();
 
 gulp.task('clean', function() {

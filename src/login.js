@@ -1,9 +1,9 @@
 'use strict';
 
-huoyun.controller("LoginController", ["$scope", "FormModel", "UserService", "Validators",
-  function($scope, FormModel, UserService, Validators) {
+huoyun.controller("LoginController", ["$scope", "FormData", "UserService", "Validators",
+  function($scope, FormData, UserService, Validators) {
 
-    $scope.vm = new FormModel("email", "password");
+    $scope.vm = new FormData("email", "password");
     $scope.vm.addValidator("email", Validators.Mandatory, "邮箱不能为空。");
     $scope.vm.addValidator("email", Validators.Email, "邮件格式不正确。");
     $scope.vm.addValidator("password", Validators.Mandatory, "密码不能为空。");

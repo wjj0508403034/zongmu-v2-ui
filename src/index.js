@@ -1,4 +1,4 @@
-var huoyun = angular.module('huoyun', ["huoyun.widget"]);
+var huoyun = angular.module('huoyun', ["huoyun.widget", 'huoyun.formdata']);
 
 huoyun.config(["$logProvider", function($logProvider) {
   $logProvider.debugEnabled(true);
