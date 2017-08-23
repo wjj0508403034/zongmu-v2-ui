@@ -26,9 +26,6 @@
             <li has-error="{{vm.password.hasError}}">
               <div class="form-input-warpper">
                 <input type="password" class="form-input" ng-model="vm.password.value" name="password" placeholder="请输入密码" tabindex="2">
-                <span class="form-input-right">
-      					    <a href="/global/password-forget.action" tabindex="4">忘记密码？</a>
-      					  </span>
               </div>
               <span class="err-msg" ng-bind="vm.password.errorMessage"></span>
             </li>
@@ -36,6 +33,9 @@
         </div>
         <div class="form-footer">
           <div class="btn" tabindex="3" ng-click="login()">登 录</div>
+        </div>
+        <div class="margin-top-30">
+          <a href="/forgetPassword.html" tabindex="4">忘记密码？</a>
         </div>
         <div class="margin-top-30">
           <span>没有账号?</span><span><a href="/register.html" class="register_link" tabindex="6" act="reg_link">免费注册</a></span>

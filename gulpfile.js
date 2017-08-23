@@ -103,7 +103,7 @@ gulp.task('concat-app-view-template', ["clean"], function() {
 
   var es = require('event-stream');
   return es.merge([
-      gulp.src(['src/*.js', 'src/view/**/*.js']),
+      gulp.src(['src/app.js', 'src/*.js', 'src/view/**/*.js']),
       templateStream
     ])
     .pipe(showFile())
